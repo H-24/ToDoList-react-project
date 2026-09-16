@@ -8,7 +8,7 @@ const Editor = ({onCreate}) => {
         setContent(e.target.value);
     };
 
-    const onKeyDown = (e) => {
+    const onKeyDown = (e: React.KeyboardEvent) => {
         if(e.key === 'Enter') onSubmit();
     }
 

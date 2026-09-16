@@ -28,7 +28,7 @@ function App() {
       id: idRef.current++,
       isDone: false,
       content: content,
-      data: new Date().getTime,
+      date: new Date().getTime(),
     }
 
     setTodos([newTodo, ...todos]);
@@ -38,7 +38,7 @@ function App() {
     <div className='App'>
       <Header />
       <Editor onCreate={onCreate}/>
-      <List />
+      <List todos={todos}/>
     </div>
   );
 }
