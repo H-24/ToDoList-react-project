@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './List.css'
 import TodoItem from './TodoItem';
+import type { ListProps } from '../types';
 
-const List = ({todos, onUpdate, onDelete}) => {
+const List = ({todos, onUpdate, onDelete} : ListProps) => {
     const [search, setSearch] = useState('');
 
     const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {

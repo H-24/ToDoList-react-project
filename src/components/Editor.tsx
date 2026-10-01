@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import './Editor.css'
 
-const Editor = ({onCreate}) => {
+type EditorProps = {
+    onCreate: (content : string) => void;
+};
+
+const Editor = ({onCreate} : EditorProps) => {
     const [content, setContent] = useState('');
 
     const onChangeContent = (e: React.ChangeEvent<HTMLInputElement>) => {

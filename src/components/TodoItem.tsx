@@ -1,6 +1,7 @@
 import './TodoItem.css'
+import type { ToDoItemProps } from '../types';
 
-const TodoItem = ({todo, onUpdate, onDelete}) => {
+const TodoItem = ({todo, onUpdate, onDelete} : ToDoItemProps) => {
     const onChangeCheckbox = () => {
         onUpdate(todo.id);
     }
