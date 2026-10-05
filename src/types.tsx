@@ -3,16 +3,30 @@ export type Todo = {
   content: string;
   isDone: boolean;
   date: number;
-}
+};
+
+export type Action =
+  | {
+      type: 'CREATE';
+      data: Todo;
+    }
+  | {
+      type: 'UPDATE';
+      targetId: number;
+    }
+  | {
+      type: 'DELETE';
+      targetId: number;
+    };
 
 export type ListProps = {
-    todos : Todo[];
-    onUpdate: (id: number) => void;
-    onDelete: (id: number) => void;
-}
+  todos: Todo[];
+  onUpdate: (id: number) => void;
+  onDelete: (id: number) => void;
+};
 
 export type ToDoItemProps = {
-    todo: Todo;
-    onUpdate: (id: number) => void;
-    onDelete: (id:number) => void;
-}
+  todo: Todo;
+  onUpdate: (id: number) => void;
+  onDelete: (id: number) => void;
+};
