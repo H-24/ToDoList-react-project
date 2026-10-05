@@ -73,3 +73,15 @@ export default defineConfig([
 ])
 
 ```
+
+# Todo App
+
+## 기술 스택
+- React
+- TypeScript
+- Vite
+
+## 주요 기능
+- Todo 추가
+- Todo 완료/취소
+- Todo 삭제
