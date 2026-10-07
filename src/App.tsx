@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Editor from './components/Editor';
 import List from './components/List';
-import { useReducer, useRef } from 'react';
+import { useReducer, useRef, useCallback } from 'react';
 import type { Action, Todo } from './types';
 
 const mock = [
@@ -39,7 +39,7 @@ function App() {
   const [todos, dispatch] = useReducer(reducer, mock);
   const idRef = useRef(2);
 
-  const onCreate = (content: string) => {
+  const onCreate = useCallback((content: string) => {
     dispatch({
       type: 'CREATE',
       data: {
@@ -49,9 +49,9 @@ function App() {
         date: new Date().getTime(),
       },
     });
-  };
+  }, []);
 
-  const onUpdate = (targetId: number) => {
+  const onUpdate = useCallback((targetId: number) => {
     // todos State 값들 중에
     // targetId와 일치하는 id를 갖는 투두 아이템의 isDone 변경
 
@@ -60,14 +60,14 @@ function App() {
       type: 'UPDATE',
       targetId: targetId,
     });
-  };
+  }, []);
 
-  const onDelete = (targetId: number) => {
+  const onDelete = useCallback((targetId: number) => {
     dispatch({
       type: 'DELETE',
       targetId: targetId,
     });
-  };
+  }, []);
 
   return (
     <div className="App">
