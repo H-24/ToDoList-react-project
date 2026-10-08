@@ -21,12 +21,14 @@ export type Action =
 
 export type ListProps = {
   todos: Todo[];
-  onUpdate: (id: number) => void;
-  onDelete: (id: number) => void;
 };
 
 export type ToDoItemProps = {
   todo: Todo;
-  onUpdate: (id: number) => void;
-  onDelete: (id: number) => void;
 };
+
+export type TodoDispatch = {
+  onCreate: (content: string) => void;
+  onUpdate: (targetId: number) => void;
+  onDelete: (targetId: number) => void;
+}
