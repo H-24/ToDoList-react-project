@@ -16,8 +16,7 @@ const TodoItem = ({todo} : ToDoItemProps) => {
     return (
         <div className='TodoItem'>
             <input onChange={onChangeCheckbox} type='checkbox'></input>
-            <div className='content'>{todo.content}</div>    
-            <div>{todo.id}</div>
+            <div className='content'>{todo.content}</div>
             <div className='date'>{new Date(todo.date).toLocaleDateString()}</div>    
             <button onClick={onClickButton}>삭제</button>
         </div>
